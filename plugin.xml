@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="org.media.scan"
+        version="0.1.0">
+    <name>Scan</name>
+    <description>Media Scan Plugin</description>
+    <license>Kardos Mobile - John Kardos</license>
+    <keywords>phonegap,media,scan</keywords>
+
+
+    <js-module src="www/scan.js" name="Scan">
+        <clobbers target="window.scan" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Scan">
+                <param name="android-package" value="org.media.scan.Scan"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Scan.java" target-dir="src/org/media/scan" />
+    </platform>
+
+
+</plugin>
+
